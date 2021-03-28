@@ -1,7 +1,7 @@
 # barcode-lottery
 Scan barcode lottery to deploy on website
 
-Step to run:
+Step to run on command prompt(cmd):
 1. pip install virtualenvwrapper-win //ติดตั้งตัวสร้าง env
 2. mkvirtualenv ชื่อ //สร้าง env 
 3. workon ชื่อ //เข้าไปใน env ที่สร้าง
