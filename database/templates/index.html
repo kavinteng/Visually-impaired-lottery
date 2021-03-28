@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+	<meta http-equiv="refresh" content="1" href="/chat">
+    <div class="container">
+        <h2>Data</h2>
+        {% for num in num %}
+        <p>{{num.num}}<p>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
