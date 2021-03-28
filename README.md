@@ -3,8 +3,8 @@ Scan barcode lottery to deploy on website
 
 Step to run:
 1. pip install virtualenvwrapper-win //ติดตั้งตัวสร้าง env
-2. mkvirtualenv <name> //สร้าง env <name> แทนชื่อที่ต้องการ
-3. workon <name> //เข้าไปใน env ที่สร้าง
+2. mkvirtualenv ชื่อ //สร้าง env 
+3. workon ชื่อ //เข้าไปใน env ที่สร้าง
 4. pip install -r requirements.txt //ติดตั้ง library ที่ใช้
 5. python manage.py runserver //จะได้ตัว host server ที่เป็น localhost
 6. python opencv_barcode.py // รันตัวกล้องที่จะใช้อ่าน lottery กดตัว q เพื่อออกจากกล้อง
