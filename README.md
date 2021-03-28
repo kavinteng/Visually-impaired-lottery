@@ -7,7 +7,7 @@ Step to run:
 3. workon <name> //เข้าไปใน env ที่สร้าง
 4. pip install -r requirements.txt //ติดตั้ง library ที่ใช้
 5. python manage.py runserver //จะได้ตัว host server ที่เป็น localhost
-6. python opencv_barcode.py // รันตัวกล้องที่จะใช้อ่าน lottery
+6. python opencv_barcode.py // รันตัวกล้องที่จะใช้อ่าน lottery กดตัว q เพื่อออกจากกล้อง
 
 
 Feature of program:
