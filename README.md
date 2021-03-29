@@ -1,4 +1,4 @@
-# barcode-lottery
+# Visually impaired-lottery
 Scan barcode lottery to deploy on website
 
 Step to run on command prompt(cmd):
