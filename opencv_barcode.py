@@ -32,6 +32,7 @@ def draw_barcode(decoded, image):
 def main():
     cap = cv2.VideoCapture(0)
     i = 0
+    num1,num2,num3 = 0,0,0
     array = []
     array2 = []
     while True:
@@ -41,8 +42,17 @@ def main():
         if type == 'I25':
             if data not in array and data != 0:
                 mydata = data.decode('utf-8')
-                array.append(data)
-                if len(mydata) == 16:
+                if i == 0:
+                    num1 = mydata
+                    i += 1
+                elif i == 1:
+                    num2 = mydata
+                    i += 1
+                elif i == 2:
+                    num3 = mydata
+                    array.append(data)
+                    i = 0
+                if len(mydata) == 16 and num1 == num2 == num3:
                     print(mydata,'\007')
                     array2.append(mydata)
             elif data in array:
