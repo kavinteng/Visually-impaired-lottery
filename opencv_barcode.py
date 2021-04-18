@@ -3,23 +3,16 @@ from pyzbar import pyzbar
 import numpy as np
 import os, sys
 import sqlite3
+import time
 
 def decode(image):
     num = 0
     type = 0
-    # decodes all barcodes from an image
     decoded_objects = pyzbar.decode(image)
     for obj in decoded_objects:
-        # draw the barcode
-        # print("detected barcode:", obj)
         image = draw_barcode(obj, image)
-        # print barcode type & data
         num = obj.data
         type = obj.type
-        # print("Type:", obj.type)
-        # print("Data:", obj.data)
-        # print()
-
     return image, num, type
 
 def draw_barcode(decoded, image):
@@ -45,16 +38,20 @@ def main():
                 if i == 0:
                     num1 = mydata
                     i += 1
+                    time.sleep(1)
                 elif i == 1:
                     num2 = mydata
                     i += 1
+                    time.sleep(1)
                 elif i == 2:
                     num3 = mydata
-                    array.append(data)
                     i = 0
-                if len(mydata) == 16 and num1 == num2 == num3:
-                    print(mydata,'\007')
-                    array2.append(mydata)
+                    print(num3, num2, num1)
+                    if len(mydata) == 16 and num1 == num2 == num3:
+                        array.append(data)
+                        print(mydata, '\007')
+                        array2.append(mydata)
+                        # cv2.imwrite('D:/ALLcode/django_proj/web_biosen/biosen/image/Test.jpg', frame_read)
             elif data in array:
                 pass
 
