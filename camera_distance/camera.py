@@ -14,7 +14,7 @@ def main():
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
     cap = cv2.VideoCapture(0)
     while True:
-        _, img = cap.read()
+        ret, img = cap.read()
         frame_width = int(cap.get(3))
         frame_height = int(cap.get(4))
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -32,10 +32,10 @@ def main():
                                       cv2.VideoWriter_fourcc(*'MP4V'), 25.0, (frame_width, frame_height))
                 num += 1
                 starttime = time.time()
-            if z == 0:
-                out.write(img)
-            if time.time()>starttime+300:
-                z=1
+        if z == 0:
+            out.write(img)
+        if time.time()>starttime+300:
+            z=1
 
         cv2.imshow('img', img)
         k = cv2.waitKey(1) & 0xff
